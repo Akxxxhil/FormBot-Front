@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "../Hero/Hero.module.css";
-import orange from "./images/orangetraingle.png";
-import blue from "./images/blue.png";
-import herochart from "./images/herochart.png";
+import orange from "../../../assets/hero-images/orangetraingle.png";
+import blue from "../../../assets/hero-images/blue.png";
+import herochart from "../../../assets/hero-images/herochart.png";
 import { useNavigate } from 'react-router-dom';
 import Explore from '../Explore/Explore';
 import Footer from "../Footer/Footer";

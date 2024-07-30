@@ -1,6 +1,6 @@
 import React from 'react';
-import explore1 from "./explore-image/explore1.webp";
-import explore2 from "./explore-image/explore2.webp";
+import explore1 from "../../../assets/explore-image/explore1.webp";
+import explore2 from "../../../assets/explore-image/explore2.webp";
 import styles from '../Explore/Explore.module.css';
 
 function Explore() {
