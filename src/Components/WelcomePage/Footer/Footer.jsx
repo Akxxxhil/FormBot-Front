@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../Footer/Footer.module.css';
 import { CiShare1 } from "react-icons/ci";
+import { NavLink } from 'react-router-dom';
 
 const prodctList = [
   {
@@ -59,15 +60,15 @@ function Footer() {
   return (
     <div className={styles.footer}>
       <div className={`${styles.footerItem} open-sans`}>
-        <div>FormBot</div>
-        <div>Made with ❤️ by @cuvette</div>
+        <div>Made with ❤️ by</div>
+        <div style={{textDecoration:"underline"}}>@cuvette</div>
       </div>
 
     
 
       <div className={`${styles.footerItem} open-sans`}>
       <ul>
-          <li style={{display:"flex",flexDirection:"column",gap:"10px"}}>
+          <li style={{display:"flex",flexDirection:"column",gap:"10px",textDecoration:"underline",cursor:"pointer"}}>
             {
               prodctList.map((item, index) => {
                 return <div key={index} className={styles.prodctList}>
@@ -83,7 +84,7 @@ function Footer() {
 
       <div className={`${styles.footerItem} open-sans`}>
         <ul>
-          <li style={{display:"flex",flexDirection:"column",gap:"10px"}}>
+          <li style={{display:"flex",flexDirection:"column",gap:"10px",textDecoration:"underline",cursor:"pointer"}}>
             {
               Community.map((item, index) => {
                 return <div key={index} className={styles.prodctList}>
@@ -99,7 +100,7 @@ function Footer() {
 
       <div className={`${styles.footerItem} open-sans`}>
       <ul>
-          <li style={{display:"flex",flexDirection:"column",gap:"10px"}}>
+          <li style={{display:"flex",flexDirection:"column",gap:"10px",textDecoration:"underline",cursor:"pointer"}}>
             {
               Company.map((item, index) => {
                 return <div key={index} className={styles.prodctList}>
