@@ -33,3 +33,8 @@ h3 {
 .themeOption.selected {
   border-color: #1A5FFF;
 }
+.headingc{
+  color: #FFFFFF;
+  margin-top: 50px;
+  text-align: center;
+  }

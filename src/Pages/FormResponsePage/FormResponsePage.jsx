@@ -87,6 +87,14 @@ function FormResponsePage() {
       }
     }
 
+    if (currentField.heading.startsWith("Input Phone")) {
+      const phoneRegex = /^\d{10}$/;
+      if (!phoneRegex.test(valueToSend)) {
+        toast.error("Please enter a valid phone number with 10 digits");
+        return;
+      }
+    }
+
     try {
       const responseDetails = {
         ...formData,
@@ -309,10 +317,10 @@ function FormResponsePage() {
                             value={formData[field._id] || ""}
                             onChange={(e) => {
                               const value = e.target.value;
-                              if (/^\d*$/.test(value)) {
+                              if (/^\d{0,10}$/.test(value)) {
                                 handleChange(field._id, value);
                               } else {
-                                toast.error("Only numbers are allowed");
+                                toast.error("Please enter a valid phone number with 10 digits");
                               }
                             }}
                             placeholder="Enter your phone"

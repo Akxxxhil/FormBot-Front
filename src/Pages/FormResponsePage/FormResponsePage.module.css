@@ -303,17 +303,18 @@
   .fieldContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 10px;
   }
   .inputBox1,
   .inputBox2 {
-    margin-left: 6%;
+    margin-left: -130px;
   }
   .inputBox {
     margin-right: -6%;
-    width: 180px;
+    width: 210px;
     height: 30px;
+    margin-left: -101px;
   }
   .ratingsend,
   .ratingbbsend {
@@ -330,8 +331,142 @@
     margin: 5px auto;
   }
   .sendButton {
-    margin-left: 43px;
-    width: 7%;
+    margin-left: 15px;
+    width: 25%;
+    margin-bottom: -33px;
+    margin-right: 10px;
+  }
+  .mediaContainer {
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: -320px;
+  }
+  .mediaContainer img,
+  .mediaContainer video {
+    margin-left: 0;
+    object-fit: cover;
+  }
+  .avatarImage {
+    margin-left: 0px;
+  }
+  .mediaContainer div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .inputBox {
+    margin-right: -6%;
+    width: 210px;
+    height: 30px;
+    margin-left: -280px;
+  }
+  .avatarImage{
+    width: 100px;
+  }
+  .inputBox1{
+    width: 180px;
+    height: 26px;
+    padding: 4px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-top: 40px;
+    margin-left: -250px;
+  }
+  .inputBox2{
+    width: 180px;
+    height: 26px;
+    padding: 4px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-top: 40px;
+    margin-left: -250px;
+  }
+  .sendButton {
+    height: 33px;
+    padding: 12px 21px;
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background-color: #1a5fff;
+    color: white;
+  }
+  .mediaContainer {
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: -320px;
+  }
+  .mediaContainer img,
+  .mediaContainer video {
+    margin-left: 0;
+    object-fit: cover;
+  }
+}
+
+@media (max-width:900px) {
+  .fieldContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  .inputBox1,
+  .inputBox2 {
+    margin-left: -130px;
+  }
+  .inputBox {
+    margin-right: -6%;
+    width: 210px;
+    height: 30px;
+    margin-left: -101px;
+  }
+  .ratingsend,
+  .ratingbbsend {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+  .ratingContainer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .actionButton {
+    width: 90%;
+    margin: 5px auto;
+  }
+  .sendButton {
+    margin-left: 15px;
+    width: 25%;
+    margin-bottom: -33px;
+    margin-right: 10px;
+  }
+  .mediaContainer {
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: -320px;
+  }
+  .mediaContainer img,
+  .mediaContainer video {
+    margin-left: 0;
+    object-fit: cover;
+  }
+  .avatarImage {
+    margin-left: 0px;
+  }
+  .mediaContainer div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
   }
 }
 

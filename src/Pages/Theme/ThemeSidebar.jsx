@@ -1,4 +1,4 @@
-// ThemeSidebar.js
+
 import React, { useState } from "react";
 import styles from "./ThemeSidebar.module.css";
 import blue from "../../assets/ThemeImages/blue.png";
@@ -17,7 +17,7 @@ const ThemeSidebar = ({ onThemeChange }) => {
 
   return (
     <div className={styles.sidebar}>
-      <h3>Customize the theme</h3>
+     <h3 className={`${styles.headingc} open-sans}`}>Customize the theme</h3>
       <div className={styles.gridContainer}>
         <div
           className={`${styles.themeOption} ${
