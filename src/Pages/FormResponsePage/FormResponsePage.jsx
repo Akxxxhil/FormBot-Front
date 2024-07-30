@@ -22,9 +22,11 @@ function FormResponsePage() {
     const fetchForm = async () => {
       try {
         const response = await fetchFormByUniqueUrl(uniqueUrl);
+        console.log("Fetched form response:", response);
         if (response && response.form) {
           setForm(response.form);
           setResponses(response.form.fields || []);
+          toast.success("Welcome! One email per user allowed. Repeated entries update previous submissions.");
         } else {
           toast.error("Form data is not available");
         }
