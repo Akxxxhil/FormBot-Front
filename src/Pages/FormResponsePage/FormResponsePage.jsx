@@ -22,18 +22,13 @@ function FormResponsePage() {
     const fetchForm = async () => {
       try {
         const response = await fetchFormByUniqueUrl(uniqueUrl);
-        console.log("Full response object:", response);
-
         if (response && response.form) {
-          console.log("Form data:", response.form);
           setForm(response.form);
           setResponses(response.form.fields || []);
         } else {
-          console.error("Form data is not available in the response");
           toast.error("Form data is not available");
         }
       } catch (error) {
-        console.error("Error fetching form", error);
         toast.error("Error fetching form");
       }
     };
@@ -55,18 +50,15 @@ function FormResponsePage() {
   }, [currentFieldIndex, responses, step]);
 
   const handleChange = (fieldId, value) => {
-    console.log(`Changing field ${fieldId} to value ${value}`);
     setFormData({ ...formData, [fieldId]: value });
   };
 
   const handleUserDetailsChange = (e) => {
     const { name, value } = e.target;
-    console.log(`Changing user detail ${name} to value ${value}`);
     setUserDetails({ ...userDetails, [name]: value });
   };
 
   const handleUserDetailsSubmit = () => {
-    console.log(`Handling user details submit for step ${step}`);
     if (step === "name" && userDetails.name) {
       setStep("email");
     } else if (step === "email" && userDetails.email) {
@@ -80,9 +72,6 @@ function FormResponsePage() {
     const currentField = responses[currentFieldIndex];
     const valueToSend = buttonValue || formData[currentField._id];
 
-    console.log(`Sending value ${valueToSend} for field ${fieldId}`);
-
-    // Validate if the field is required and not filled
     if (!valueToSend) {
       toast.error("This field is required, please fill it");
       return;
@@ -106,11 +95,9 @@ function FormResponsePage() {
       await saveFormResponse(uniqueUrl, responseDetails);
       toast.success("Response submitted successfully");
 
-      console.log(`Disabling input and button for field ${fieldId}`);
       setClickedButtons({ ...clickedButtons, [fieldId]: true });
       setCurrentFieldIndex((prevIndex) => prevIndex + 1);
     } catch (error) {
-      console.error("Error submitting response", error);
       toast.error("Error submitting response");
     }
   };
@@ -159,12 +146,26 @@ function FormResponsePage() {
     return "#ffffff";
   };
 
+  const getTextColor = () => {
+    if (form) {
+      switch (form.theme) {
+        case "blue":
+          return "black";
+        case "dark":
+          return "#ffffff";
+        default:
+          return "#000000";
+      }
+    }
+    return "#000000";
+  };
+
   return (
     <div className={styles.chatContainer} style={{ backgroundColor: getBackgroundColor() }}>
       {form ? (
-        <div>
-          <div>
-            <div>
+        <div className={styles.centerWrapper}>
+          <div className={styles.formContent}>
+            <div className={styles.inputContainer}>
               <input
                 type="text"
                 name="name"
@@ -184,7 +185,7 @@ function FormResponsePage() {
               )}
             </div>
             {step !== "name" && (
-              <div>
+              <div className={styles.inputContainer}>
                 <input
                   type="email"
                   name="email"
@@ -212,7 +213,7 @@ function FormResponsePage() {
                     <div key={field._id} className={styles.fieldContainer}>
                       {field.heading.startsWith("Input Email") ? (
                         <div>
-                          <h3>{field.value}</h3>
+                          <h3 style={{ color: getTextColor() }}>{field.value}</h3>
                           <input
                             type="email"
                             value={formData[field._id] || ""}
@@ -254,7 +255,8 @@ function FormResponsePage() {
                       ) : field.heading.startsWith("Input Date") ? (
                         <div className={styles.fieldContainer}>
                           <h3>{field.value}</h3>
-                          <DatePicker
+                         <div className={styles.datepicker1}>
+                         <DatePicker
                             selected={formData[field._id] || null}
                             onChange={(date) => handleChange(field._id, date)}
                             dateFormat="dd-MM-yyyy"
@@ -269,6 +271,7 @@ function FormResponsePage() {
                           >
                             <IoMdSend size={"20px"} color="#FFFFFF" />
                           </button>
+                         </div>
                         </div>
                       ) : field.heading.startsWith("Input Number") ? (
                         <div>
@@ -362,7 +365,7 @@ function FormResponsePage() {
                             ) ? (
                               renderMedia(field.value)
                             ) : (
-                              <h3>{field.value}</h3>
+                              <h3 className={styles.bubbleheading} style={{ color: getTextColor()}}>{field.value}</h3>
                             )}
                           </div>
                         </div>

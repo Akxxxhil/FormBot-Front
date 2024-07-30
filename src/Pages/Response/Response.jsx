@@ -128,7 +128,7 @@ const Response = () => {
       <div className={`${styles.data} open-sans`}>
         <div className={styles.dataeach}>
           <span>Views</span>
-          <span>{viewCount / 2}</span> {/* Display view count */}
+          <span>{viewCount}</span> {/* Display view count */}
         </div>
         <div className={styles.dataeach}>
           <span>Starts</span>
