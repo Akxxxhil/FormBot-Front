@@ -6,6 +6,9 @@
   max-width: 70%;
   word-wrap: break-word;
 }
+.inputContainer .sendButton {
+  margin-top: 31px;
+}
 
 .chatBubble input {
   border: none;
@@ -112,17 +115,16 @@
   background-color: #ff8e21;
   color: white;
 }
-.ratingContainer.clicked {
-  background-color: #777777;
-}
 
 .datepicker {
   display: flex;
   align-items: center;
 }
+
 .datepicker1 {
   margin-bottom: 10px;
 }
+
 .centerWrapper {
   display: flex;
   justify-content: flex-start;
@@ -299,12 +301,21 @@
   align-items: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .fieldContainer {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 10px;
+  }
+  .inputContainer .sendButton {
+    margin-top: 0px;
+  }
+  .datepicker1 {
+    display: flex;
+  }
+  .datepicker1 .sendButton {
+    margin-top: 40px;
   }
   .inputBox1,
   .inputBox2 {
@@ -318,17 +329,22 @@
   }
   .ratingsend,
   .ratingbbsend {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    margin-left: 0;
+    margin-left: -550px;
+    width: 140px;
+    align-items: center;
+  }
+  .ratingsend .sendButton {
+    margin-top: -20px;
   }
   .ratingContainer {
     flex-direction: row;
     justify-content: space-around;
   }
   .actionButton {
-    width: 90%;
-    margin: 5px auto;
+    width: 500px;
+    margin-left: 100px;
   }
   .sendButton {
     margin-left: 15px;
@@ -357,17 +373,41 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 580px) {
   .inputBox {
     margin-right: -6%;
     width: 210px;
     height: 30px;
     margin-left: -280px;
   }
-  .avatarImage{
+  .actionButton {
+    width: 100px;
+    margin-left: -100px;
+  }
+  .actionButton .actionButton.clicked {
+    margin-left: 10px;
+  }
+  .inputContainer .disabledButton {
+    background-color: #777777;
+    pointer-events: none;
+    color: #ffffff;
+  }
+  .inputContainer .sendButton {
+    margin-top: 30px;
+  }
+  .ratingsend {
+    margin-left: -750px;
+  }
+  .ratingsend .sendButton {
+    margin-top: 10px;
+  }
+  .datepicker1 .sendButton {
+    margin-left: -50px;
+  }
+  .avatarImage {
     width: 100px;
   }
-  .inputBox1{
+  .inputBox1 {
     width: 180px;
     height: 26px;
     padding: 4px;
@@ -378,7 +418,7 @@
     margin-top: 40px;
     margin-left: -250px;
   }
-  .inputBox2{
+  .inputBox2 {
     width: 180px;
     height: 26px;
     padding: 4px;
@@ -390,65 +430,18 @@
     margin-left: -250px;
   }
   .sendButton {
-    height: 33px;
+    height: 40px;
     padding: 12px 21px;
     font-size: 16px;
-    margin-left: 5px;
+    margin-left: 3px;
     cursor: pointer;
     border: none;
     border-radius: 3px;
     background-color: #1a5fff;
     color: white;
-  }
-  .mediaContainer {
-    justify-content: flex-start;
-    width: 100%;
-    margin-left: -320px;
-  }
-  .mediaContainer img,
-  .mediaContainer video {
-    margin-left: 0;
-    object-fit: cover;
-  }
-}
-
-@media (max-width:900px) {
-  .fieldContainer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    width: 10px;
     margin-bottom: 10px;
   }
-  .inputBox1,
-  .inputBox2 {
-    margin-left: -130px;
-  }
-  .inputBox {
-    margin-right: -6%;
-    width: 210px;
-    height: 30px;
-    margin-left: -101px;
-  }
-  .ratingsend,
-  .ratingbbsend {
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-  }
-  .ratingContainer {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .actionButton {
-    width: 90%;
-    margin: 5px auto;
-  }
-  .sendButton {
-    margin-left: 15px;
-    width: 25%;
-    margin-bottom: -33px;
-    margin-right: 10px;
-  }
   .mediaContainer {
     justify-content: flex-start;
     width: 100%;
@@ -458,15 +451,6 @@
   .mediaContainer video {
     margin-left: 0;
     object-fit: cover;
-  }
-  .avatarImage {
-    margin-left: 0px;
-  }
-  .mediaContainer div {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
   }
 }
 
