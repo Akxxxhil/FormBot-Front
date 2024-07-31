@@ -28,7 +28,7 @@ const saveForm = async (formDetails) => {
   }
 };
 
-// New function to update the form
+
 const updateForm = async (formId, formDetails) => {
   const token = localStorage.getItem("token");
   if (!token) {
@@ -197,10 +197,10 @@ const updateViewCount = async (formId) => {
   }
 };
 
-// Export the new updateForm function along with the existing exports
+
 export {
   saveForm,
-  updateForm, // Add updateForm to the export list
+  updateForm, 
   getformbyusers,
   fetchFormById,
   fetchFormByUniqueUrl,

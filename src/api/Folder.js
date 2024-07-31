@@ -3,7 +3,7 @@ import axios from 'axios';
 const BACKEND_ORIGIN_URL = 'https://form-bot-back-anshuman.vercel.app';
 
 const createFolder = async (foldername, userId) => {
-  const token = localStorage.getItem('token'); // Retrieve token from local storage
+  const token = localStorage.getItem('token'); 
 
   if (!token) {
     throw new Error("No token found, please log in again.");

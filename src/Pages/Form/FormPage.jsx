@@ -33,9 +33,9 @@ const FormPage = ({ isNewForm }) => {
   const [hasBubblesOrInputs, setHasBubblesOrInputs] = useState(false);
   const navigate = useNavigate();
 
-  const imageUrlRegex = /\.(jpeg|jpg|gif|png)$/;
-  const videoUrlRegex = /\.(mp4|webm|ogg)$/;
-  const gifUrlRegex = /\.(gif)$/;
+  const imageUrlRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg|webp))$/i;
+  const videoUrlRegex = /^(https?:\/\/.*\.(?:mp4|webm|ogg))$/i;
+  const gifUrlRegex = /^(https?:\/\/.*\.(?:gif))$/i;
 
   useEffect(() => {
     if (!isNewForm && formId) {

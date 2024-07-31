@@ -40,7 +40,7 @@ const Register = async (username, email, password, confirmpassword) => {
             confirmpassword
         });
 
-        console.log("signup", response.data);  // Corrected syntax
+        console.log("signup", response.data);  
         return response.data;  
     } catch (error) {
         if (error.response && error.response.data) {

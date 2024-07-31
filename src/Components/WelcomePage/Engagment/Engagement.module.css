@@ -1,14 +1,14 @@
 .container {
   display: flex;
-  flex-direction: column; /* Align images and content vertically */
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
-  height: 100vh; /* Occupies full viewport height */
-  background-color: #1a202c; /* Set a dark background color */
-  position: relative; /* Allow absolute positioning for images */
-  overflow: hidden; /* Ensure no overflow from large images */
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh; 
+  background-color: #1a202c; 
+  position: relative; 
+  overflow: hidden;
   padding: 20px;
-  text-align: center; /* Center text for better aesthetics */
+  text-align: center; 
 }
 
 .imageWrapper {
@@ -37,25 +37,25 @@
 
 .content {
   position: relative;
-  z-index: 2; /* Ensure the content is above images */
-  padding: 50px; /* Add padding for better spacing */
+  z-index: 2; 
+  padding: 50px; 
 }
 
 .engSignup {
   background-color: #1a5fff;
   color: #ffffff;
-  padding: 15px 40px; /* Increase padding for button width */
+  padding: 15px 40px; 
   border-radius: 5px;
   border: none;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-weight: 400;
-  height: 50px; /* Fixed height for the button */
-  display: inline-flex; /* Enables flexbox for alignment */
-  align-items: center; /* Centers text vertically */
-  justify-content: center; /* Centers text horizontally */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+  height: 50px; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .engSignup:hover {
@@ -63,25 +63,25 @@
 }
 
 .heading {
-  font-size: 24px; /* Increase heading size for emphasis */
+  font-size: 24px; 
   font-weight: 700;
-  margin-bottom: 20px; /* Add space between heading and button */
-  color: white; /* Ensure text is white */
+  margin-bottom: 20px; 
+  color: white; 
 }
 
 .subheading {
-  font-size: 14px; /* Slightly smaller font size for subheading */
+  font-size: 14px; 
   color: #a0aec0;
-  margin-top: 10px; /* Space between button and subheading */
+  margin-top: 10px; 
 }
 
 @media (max-width: 768px) {
   .engSignup {
-    width: 100%; /* Full width button on smaller screens */
-    padding: 12px; /* Adjust padding for smaller screens */
+    width: 100%; 
+    padding: 12px;
   }
 
   .heading {
-    font-size: 20px; /* Adjust heading size on smaller screens */
+    font-size: 20px; 
   }
 }
