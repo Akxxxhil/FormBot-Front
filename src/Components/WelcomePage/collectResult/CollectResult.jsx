@@ -9,7 +9,7 @@ function CollectResult() {
 
       <div className={`${styles.subheading} open-sans`}>
         <div>One of the main advantage of a chat application is that you collect the user's responses on each question.</div>
-        <div>You won't lose any valuable data.</div>
+        <div className={styles.subheading2}>You won't lose any valuable data.</div>
       </div>
 
       <div>

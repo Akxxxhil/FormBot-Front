@@ -36,7 +36,7 @@ function Engagement() {
         </button>
 
         <div className={`${styles.subheading} open-sans`}>
-          No trial. Generous free plan.
+          No trial. Generous <span style={{fontWeight:800}}>free</span> plan.
         </div>
       </div>
     </div>
