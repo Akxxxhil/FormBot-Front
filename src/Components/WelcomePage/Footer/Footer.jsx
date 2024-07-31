@@ -61,7 +61,7 @@ function Footer() {
     <div className={styles.footer}>
       <div className={`${styles.footerItem} open-sans`}>
         <div>Made with ❤️ by</div>
-        <div style={{textDecoration:"underline"}}>@cuvette</div>
+        <div style={{textDecoration:"underline"}}>@Anshuman</div>
       </div>
 
     
