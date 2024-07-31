@@ -27,17 +27,15 @@ const Response = () => {
       try {
         setLoading(true);
 
-        // Fetch form structure to get field names and view count
         const { form } = await fetchFormById(formId);
         if (form && form.fields) {
-          setViewCount(form.views); // Set the view count
-          setUniqueUrl(form.uniqueUrl || ''); // Set the unique URL
-          setHasBubblesOrInputs(form.fields.length > 0); // Check if form has bubbles or inputs
+          setViewCount(form.views);
+          setUniqueUrl(form.uniqueUrl || '');
+          setHasBubblesOrInputs(form.fields.length > 0);
 
-          // Filter only input boxes and exclude fields with unwanted headings
           const filteredFields = form.fields.filter((field) =>
             ['Text', 'Number', 'Email', 'Phone', 'Date', 'Rating', 'Buttons'].includes(field.type) &&
-            !/^(text|image|video|gif)/i.test(field.heading) // Exclude fields starting with "text", "image", "video", "gif"
+            !/^(text|image|video|gif)/i.test(field.heading)
           );
           setFormFields(filteredFields);
         } else {
@@ -46,17 +44,14 @@ const Response = () => {
           return;
         }
 
-        // Fetch responses
         const responseList = await fetchFormResponses(formId);
         if (responseList && responseList.length) {
-          // Group responses by email
           const emailResponsesMap = responseList.reduce((acc, response) => {
-            const email = response.responses['email']; // Assuming email is stored in responses
+            const email = response.responses['email'];
             if (!acc[email]) {
               acc[email] = { ...response, responses: { ...response.responses } };
             } else {
               acc[email].responses = { ...acc[email].responses, ...response.responses };
-              // Update the submitted time to the latest
               if (new Date(acc[email].submittedAt) < new Date(response.submittedAt)) {
                 acc[email].submittedAt = response.submittedAt;
               }
@@ -64,7 +59,6 @@ const Response = () => {
             return acc;
           }, {});
 
-          // Convert grouped responses back to an array
           const finalResponses = Object.values(emailResponsesMap).sort(
             (a, b) => new Date(b.submittedAt) - new Date(a.submittedAt)
           );
@@ -89,7 +83,9 @@ const Response = () => {
 
   const errorMessage = error || 'No responses yet collected.';
 
-  const completionRate = responses.length ? ((responses.length / (viewCount / 2)) * 100).toFixed(1) : '0.0';
+  const starts = responses.filter(response => Object.keys(response.responses).length > 0).length;
+
+  const completionRate = Math.min(((starts / (viewCount / 2)) * 100).toFixed(1), 100);
 
   const handleShare = async () => {
     console.log('handleShare executed in Response component');
@@ -108,7 +104,6 @@ const Response = () => {
     }
   };
 
-  // Helper function to format date fields in responses
   const formatResponseDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
@@ -128,11 +123,11 @@ const Response = () => {
       <div className={`${styles.data} open-sans`}>
         <div className={styles.dataeach}>
           <span>Views</span>
-          <span>{viewCount}</span> {/* Display view count */}
+          <span>{viewCount}</span>
         </div>
         <div className={styles.dataeach}>
           <span>Starts</span>
-          <span>{responses.length}</span>
+          <span>{starts}</span>
         </div>
         <div className={styles.dataeach}>
           <span>Completion rate</span>
@@ -157,12 +152,12 @@ const Response = () => {
           <tbody>
             {responses.map((response, index) => (
               <tr key={index}>
-                <td>{index + 1}</td> {/* Serial number */}
-                <td>{new Date(response.submittedAt).toLocaleString('en-US', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', hour12: true })}</td> {/* New format */}
+                <td>{index + 1}</td>
+                <td>{new Date(response.submittedAt).toLocaleString('en-US', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', hour12: true })}</td>
                 <td>{response.responses['email']}</td>
                 {formFields.map((field, keyIndex) => (
                   <td key={keyIndex}>
-                    {field.type === 'Date' ? formatResponseDate(response.responses[field._id]) : (response.responses[field._id] || '-')} {/* Check if field type is Date and format accordingly */}
+                    {field.type === 'Date' ? formatResponseDate(response.responses[field._id]) : (response.responses[field._id] || '-')}
                   </td>
                 ))}
               </tr>

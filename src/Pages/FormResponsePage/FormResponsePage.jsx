@@ -22,7 +22,6 @@ function FormResponsePage() {
     const fetchForm = async () => {
       try {
         const response = await fetchFormByUniqueUrl(uniqueUrl);
-        console.log("Fetched form response:", response);
         if (response && response.form) {
           setForm(response.form);
           setResponses(response.form.fields || []);
@@ -243,7 +242,7 @@ function FormResponsePage() {
                       ) : field.heading.startsWith("Input Rating") ? (
                         <div className={styles.ratingsend}>
                           <h3>{field.value}</h3>
-                          <div className={styles.ratingContainer}>
+                          <div className={`${styles.ratingContainer} ${clickedButtons[field._id] ? styles.disabledRating : ''}`}>
                             {[1, 2, 3, 4, 5].map((rating) => (
                               <span
                                 key={rating}

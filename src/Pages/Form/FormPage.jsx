@@ -79,7 +79,6 @@ const FormPage = ({ isNewForm }) => {
           setBubbleCounts(bubbleCounts);
           setInputCounts(inputCounts);
 
-          // Update view count
           await updateViewCount(formId);
         } catch (error) {
           console.error("Error fetching form details", error);
@@ -106,7 +105,6 @@ const FormPage = ({ isNewForm }) => {
     const requiredFieldTypes = ['Text', 'Image', 'Video', 'GIF', 'Buttons'];
     const newErrors = {};
 
-    // Validate if required fields are filled
     const isFormNameFilled = formName.trim() !== "";
     if (!isFormNameFilled) {
       newErrors.formName = 'Form name is required';
@@ -235,7 +233,6 @@ const FormPage = ({ isNewForm }) => {
       const updatedFields = [...prevFields];
       updatedFields[index].value = value;
 
-      // Clear the error for the current field if it is filled
       if (updatedFields[index].value.trim() !== "") {
         const newErrors = { ...errors };
         delete newErrors[index];
