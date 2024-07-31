@@ -1,4 +1,4 @@
-/* Add this to DashBoard.module.css */
+
 
 .maindiv {
   background-image: linear-gradient(to right, #121212, #18181b);
@@ -184,8 +184,8 @@
 }
 .shape {
   position: absolute;
-  top: -75%; /* Adjusted from 5% to 2% to move it a bit higher */
+  top: -75%; 
   left: 5%;
   cursor: pointer;
-  z-index: 1000; /* Ensure it stays on top of other elements */
+  z-index: 1000; 
 }

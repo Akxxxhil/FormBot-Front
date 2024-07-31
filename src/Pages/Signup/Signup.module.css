@@ -10,30 +10,30 @@
 .shape {
   position: absolute;
   transform: translate(-50%, -50%);
-  z-index: 0; /* Ensure shapes are behind the form */
+  z-index: 0; 
 }
 
 .traingle {
-  left: 40px; /* Center on the left border */
-  top: 50%; /* Vertically centered */
+  left: 40px; 
+  top: 50%; 
   transform: translate(-10%, -50%);
-  width: 280px; /* Adjust size as needed */
+  width: 280px; 
   height: auto;
 }
 
 .ellipseUpper {
-  right: 9px; /* Center on the right border */
-  top: 50%; /* Vertically centered */
+  right: 9px; 
+  top: 50%; 
   transform: translate(10%, -50%);
-  width: 80px; /* Adjust size as needed */
+  width: 80px; 
   height: auto;
 }
 
 .ellipseDown {
-  bottom: 50px; /* Center on the bottom border */
-  left: 70%; /* Horizontally centered */
+  bottom: 50px; 
+  left: 70%; 
   transform: translate(-10%, 50%);
-  width: 150px; /* Adjust size as needed */
+  width: 150px; 
   height: auto;
 }
 
@@ -44,8 +44,8 @@
   border-radius: 8px;
   width: 100%;
   max-width: 400px;
-  z-index: 1; /* Ensure the form is above the shapes */
-  position: relative; /* Ensure form content is positioned relative to container */
+  z-index: 1; 
+  position: relative; 
 }
 
 .inputGroup {

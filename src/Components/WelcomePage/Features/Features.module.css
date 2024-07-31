@@ -28,12 +28,12 @@
   .featureCard {
     background-color: #1A202C;
     border-radius: 8px;
-    padding: 40px 20px 20px; /* Add padding to accommodate icon */
+    padding: 40px 20px 20px; 
     width: 100%;
     max-width: 320px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Set position to relative for absolute positioning of the icon */
+    position: relative; 
     text-align: center;
   }
   
@@ -49,11 +49,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute; /* Absolute positioning to place at top center */
-    top: -30px; /* Centering the icon vertically outside the card */
+    position: absolute; 
+    top: -30px; 
     left: 50%;
-    transform: translateX(-50%); /* Centering the icon horizontally */
-    border-radius: 8px; /* Square shape with slightly rounded corners */
+    transform: translateX(-50%); 
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   
@@ -63,7 +63,7 @@
   }
   
   .textContent {
-    padding-top: 20px; /* Space between icon and text */
+    padding-top: 20px; 
   }
   
   .title {

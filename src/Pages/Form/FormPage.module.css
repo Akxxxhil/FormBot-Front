@@ -1,10 +1,4 @@
-/* .container {
-  background-color: #1F1F23;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 50px;
-} */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -133,14 +127,7 @@
   border-radius: 10px;
 }
 
-/* .fieldsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 270px;
-  width: calc(100% - 270px);
-  padding: 20px;
-} */
+
 .fieldsContainer {
   display: flex;
   flex-direction: column;
@@ -157,7 +144,7 @@
   background-color: #18181B;
   border-radius: 10px;
   position: relative;
-  border: 1px solid transparent; /* Change from #444 to transparent */
+  border: 1px solid transparent; 
 }
 
 .fieldHeader {
@@ -173,13 +160,13 @@
 
 .deleteIcon {
   position: absolute;
-  top: -10px; /* Adjust to position the icon at the top */
-  right: -10px; /* Adjust to position the icon at the top */
+  top: -10px; 
+  right: -10px; 
   cursor: pointer;
   background-color: #18181B;
   border-radius: 50%;
   padding: 5px;
-  color: red; /* Ensure the delete icon is red */
+  color: red; 
 }
 
 .formField input {
@@ -209,13 +196,13 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  margin: 40px 0 20px 0; /* Adjusted margin to bring it a little down */
+  margin: 40px 0 20px 0; 
   font-size: 1.2rem;
   gap: 10px;
 }
-/* Field.module.css */
 
-/* FormPage.module.css */
+
+
 
 .formField {
   margin-bottom: 10px;
